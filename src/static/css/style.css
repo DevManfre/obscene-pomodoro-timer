@@ -1,5 +1,5 @@
 body #root {
-  background-color: #E7B9B9;
+  background-color: #e29d9d;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -10,13 +10,36 @@ body #root .pomodoro-timer {
   height: 500px;
   width: 409.0909090909px;
   border-radius: 25px;
+  font-family: MyCustomFont;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 body #root .pomodoro-timer .title {
-  text-align: center;
+  font-size: 40px;
+  margin: 20px;
   color: #DD5353;
-  margin: 12px;
+  text-align: center;
+}
+body #root .pomodoro-timer .setting {
+  color: #e29d9d;
+  font-size: 25px;
+  text-align: center;
+}
+body #root .pomodoro-timer .setting .setting-title {
+  margin: 0;
+}
+body #root .pomodoro-timer .setting span {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  display: inline-block;
+  width: 50px;
+}
+body #root .pomodoro-timer .setting i {
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("../font/super-creamy.ttf") format("truetype");
 }/*# sourceMappingURL=style.css.map */
