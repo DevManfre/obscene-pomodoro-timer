@@ -18,31 +18,51 @@ body #root {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+        padding: calc($pomodoro-size / 25);;
 
         .title {
             font-size: calc($pomodoro-size / 12.5);
-            margin: calc($pomodoro-size / 25);
             color: $pomodoro-main-color;
             text-align: center;
         }
 
-        .setting {
+        .row {
             color: $body-bg;
-            font-size: calc($pomodoro-size / 20);
-            text-align: center;
-
-            .setting-title {
-                margin: 0;
+            
+            .setting {
+                font-size: calc($pomodoro-size / 20);
+                text-align: center;
+    
+                .setting-title {
+                    margin: 0;
+                }
+    
+                span {
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    display: inline-block;
+                    width: 50px;
+                }
             }
 
-            span {
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                display: inline-block;
-                width: 50px;
+            .play-btn {
+                font-size: 50px;
+                text-align: center;
             }
-
+            
             i {
                 cursor: pointer;
+            }
+        }
+
+        .timer {
+            margin-top: 15px;
+            width: 300px;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%);
+
+            .CircularProgressbar-text {
+                font-size: 12px;
             }
         }
     }
