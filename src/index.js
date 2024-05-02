@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import PomodoroTimer from './components/PomodoroTimer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <h1>New Project</h1>
+    <PomodoroTimer />
   </React.StrictMode>
 );
