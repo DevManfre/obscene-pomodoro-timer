@@ -1,0 +1,26 @@
+$body-bg: #E7B9B9;
+$pomodoro-size: 500px;
+$pomodoro-start-bg: white;
+
+body #root {
+    background-color: $body-bg;
+    user-select: none;
+    height: 100vh;
+
+    .pomodoro-timer {
+        background-color: $pomodoro-start-bg;
+        height: $pomodoro-size;
+        width: calc($pomodoro-size / 11 * 9);
+        border-radius: calc($pomodoro-size / 20);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        .title{
+           text-align: center;
+           color: #DD5353;
+           margin: 12px;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+body #root {
+  background-color: #E7B9B9;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  height: 100vh;
+}
+body #root .pomodoro-timer {
+  background-color: white;
+  height: 500px;
+  width: 409.0909090909px;
+  border-radius: 25px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+body #root .pomodoro-timer .title {
+  text-align: center;
+  color: #DD5353;
+  margin: 12px;
+}/*# sourceMappingURL=style.css.map */
