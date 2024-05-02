@@ -32,6 +32,8 @@ body #root .pomodoro-timer .setting .setting-title {
 }
 body #root .pomodoro-timer .setting span {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  display: inline-block;
+  width: 50px;
 }
 body #root .pomodoro-timer .setting i {
   cursor: pointer;

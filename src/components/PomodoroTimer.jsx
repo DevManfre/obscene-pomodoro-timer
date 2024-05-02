@@ -8,7 +8,7 @@ function PomodoroTimer() {
         <div className="pomodoro-timer">
             <h1 className='title'>Pomodoro Timer</h1>
             <div className="row">
-                <TimerSettings>Break</TimerSettings>
+                <TimerSettings value={5}>Break</TimerSettings>
                 <TimerSettings>Work</TimerSettings>
             </div>
         </div>
