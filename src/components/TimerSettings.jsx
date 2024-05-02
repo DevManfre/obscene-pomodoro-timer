@@ -1,7 +1,5 @@
-import { useState } from "react";
-
-function TimerSettings({ children, value = 25 }) {
-    const [time, setTime] = useState(value);
+function TimerSettings({ children, state }) {
+    const [time, setTime] = state;
     const leftArrow = () => {
         if (time > 1) setTime(time - 1);
     }
