@@ -68,6 +68,7 @@ function PomodoroTimer() {
             </animated.div>
             <div className="timer">
                 <CircularProgressbar maxValue={timerMaxValue} value={timerValue} text={timerText} styles={buildStyles({
+                    pathTransitionDuration: 1,
                     pathColor: Colors.pomodoroMainColor,
                     textColor: Colors.pomodoroMainColor
                 })} />
