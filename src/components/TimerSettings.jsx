@@ -10,9 +10,9 @@ function TimerSettings({ children, state }) {
     return (
         <div className="setting col-sm-4">
             <h2 className="setting-title">{children}</h2>
-            <i class="bi bi-arrow-left-circle" onClick={leftArrow}></i>
+            <i className="bi bi-arrow-left-circle" onClick={leftArrow}></i>
             <span>{time}</span>
-            <i class="bi bi-arrow-right-circle" onClick={rightArrow}></i>
+            <i className="bi bi-arrow-right-circle" onClick={rightArrow}></i>
         </div>
     );
 }

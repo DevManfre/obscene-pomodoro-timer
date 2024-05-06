@@ -3,6 +3,7 @@ $pomodoro-size: 500px;
 $pomodoro-start-bg: white;
 $pomodoro-main-color: #DD5353;
 
+// STYLES
 body #root {
     background-color: $body-bg;
     user-select: none;
@@ -10,7 +11,6 @@ body #root {
 
     .pomodoro-timer {
         background-color: $pomodoro-start-bg;
-        height: $pomodoro-size;
         width: calc($pomodoro-size / 11 * 9);
         border-radius: calc($pomodoro-size / 20);
         font-family: MyCustomFont;
@@ -18,7 +18,7 @@ body #root {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        padding: calc($pomodoro-size / 25);;
+        padding: calc($pomodoro-size / 25);
 
         .title {
             font-size: calc($pomodoro-size / 12.5);
@@ -28,15 +28,15 @@ body #root {
 
         .row {
             color: $body-bg;
-            
+
             .setting {
                 font-size: calc($pomodoro-size / 20);
                 text-align: center;
-    
+
                 .setting-title {
                     margin: 0;
                 }
-    
+
                 span {
                     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                     display: inline-block;
@@ -48,7 +48,7 @@ body #root {
                 font-size: 50px;
                 text-align: center;
             }
-            
+
             i {
                 cursor: pointer;
             }
@@ -68,6 +68,7 @@ body #root {
     }
 }
 
+// FONTS
 @font-face {
     font-family: "MyCustomFont";
     src: url('../font/super-creamy.ttf') format("truetype");
