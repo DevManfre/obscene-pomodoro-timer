@@ -1,3 +1,9 @@
+:export {
+  bodyBg: #e29d9d;
+  pomodoroStartBg: white;
+  pomodoroMainColor: #DD5353;
+}
+
 body #root {
   background-color: #e29d9d;
   -webkit-user-select: none;
@@ -7,7 +13,8 @@ body #root {
 }
 body #root .pomodoro-timer {
   background-color: white;
-  height: 500px;
+  height: -moz-min-content;
+  height: min-content;
   width: 409.0909090909px;
   border-radius: 25px;
   font-family: MyCustomFont;
@@ -50,9 +57,7 @@ body #root .pomodoro-timer .timer {
   position: relative;
   left: 50%;
   transform: translate(-50%);
-}
-body #root .pomodoro-timer .timer .CircularProgressbar-text {
-  font-size: 12px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 @font-face {

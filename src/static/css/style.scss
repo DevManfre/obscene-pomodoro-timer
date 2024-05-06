@@ -1,7 +1,16 @@
+// VARS
 $body-bg: #e29d9d;
 $pomodoro-size: 500px;
 $pomodoro-start-bg: white;
 $pomodoro-main-color: #DD5353;
+$font-family-digit: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+// EXPORT
+:export {
+    bodyBg: $body-bg;
+    pomodoroStartBg: $pomodoro-start-bg;
+    pomodoroMainColor: $pomodoro-main-color;
+}
 
 // STYLES
 body #root {
@@ -11,6 +20,7 @@ body #root {
 
     .pomodoro-timer {
         background-color: $pomodoro-start-bg;
+        height: min-content;
         width: calc($pomodoro-size / 11 * 9);
         border-radius: calc($pomodoro-size / 20);
         font-family: MyCustomFont;
@@ -38,7 +48,7 @@ body #root {
                 }
 
                 span {
-                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    font-family: $font-family-digit;
                     display: inline-block;
                     width: 50px;
                 }
@@ -60,10 +70,7 @@ body #root {
             position: relative;
             left: 50%;
             transform: translate(-50%);
-
-            .CircularProgressbar-text {
-                font-size: 12px;
-            }
+            font-family: $font-family-digit;
         }
     }
 }
