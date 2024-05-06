@@ -15,11 +15,13 @@ function PomodoroTimer() {
     const [timerMaxValue, setTimerMaxValue] = useState(1);
     const [settingsVisibility, setSettingsVisibility] = useState(true);
     const [timerText, setTimerText] = useState('');
+    const [title, setTitle] = useState("Pomodoro Timer");
     const [settings, settingsApi] = useSpring(() => ({
         opacity: 1
     }));
 
     function handlePlayClick() {
+        // Graphic changes
         settingsApi.start({
             from: {
                 opacity: 1,
@@ -29,6 +31,7 @@ function PomodoroTimer() {
             }
         });
         setTimeout(() => setSettingsVisibility(false), 500);
+        setTitle("Time to focus!")
 
         let totalSeconds = workState[0] * 60;
 
@@ -52,7 +55,7 @@ function PomodoroTimer() {
 
     return (
         <div className="pomodoro-timer">
-            <h1 className='title'>Pomodoro Timer</h1>
+            <h1 className='title'>{title}</h1>
             <animated.div className="row" style={{
                 display: settingsVisibility ? 'inerhit' : 'none',
                 ...settings
