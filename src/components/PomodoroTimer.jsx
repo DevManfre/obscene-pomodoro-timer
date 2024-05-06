@@ -10,7 +10,7 @@ import { animated, useSpring } from '@react-spring/web'
 
 function PomodoroTimer() {
     const breakState = useState(5);
-    const workState = useState(0.5);
+    const workState = useState(25);
     const [timerValue, setTimerValue] = useState(1);
     const [timerMaxValue, setTimerMaxValue] = useState(1);
     const [settingsVisibility, setSettingsVisibility] = useState(true);
