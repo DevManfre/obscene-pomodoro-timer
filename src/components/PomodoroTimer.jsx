@@ -9,8 +9,8 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import { animated, useSpring } from '@react-spring/web'
 
 function PomodoroTimer() {
-    const breakState = useState(5);
-    const workState = useState(25);
+    const breakState = useState(0.1);
+    const workState = useState(0.15);
     const [timerValue, setTimerValue] = useState(1);
     const [timerMaxValue, setTimerMaxValue] = useState(1);
     const [settingsVisibility, setSettingsVisibility] = useState(true);
@@ -19,6 +19,38 @@ function PomodoroTimer() {
     const [settings, settingsApi] = useSpring(() => ({
         opacity: 1
     }));
+
+    function timer(totalSeconds, isWorkTime) {
+        setTimerValue(totalSeconds);
+        setTimerMaxValue(totalSeconds);
+        let intervalId = setInterval(() => {
+            const stringCorrection = (n) => {
+                if (n < 10) return '0' + n;
+                return n;
+            }
+
+            setTimerValue(totalSeconds);
+            let minutes = stringCorrection(parseInt(totalSeconds / 60));
+            let seconds = stringCorrection(totalSeconds % 60);
+            setTimerText(`${minutes}:${seconds}`);
+            totalSeconds -= 1;
+
+            if (totalSeconds < 0) {
+                clearInterval(intervalId);
+
+                if (isWorkTime) {
+                    /* Starting break */
+                    timer(breakState[0] * 60, false);
+                    setTitle('Take a break!');
+                }
+                else {
+                    /* Starting work */
+                    timer(workState[0] * 60, true);
+                    setTitle('Time to focus!');
+                }
+            }
+        }, 1000);
+    }
 
     function handlePlayClick() {
         // Graphic changes
@@ -35,24 +67,7 @@ function PomodoroTimer() {
             setTitle("Time to focus!");
         }, 500);
 
-        let totalSeconds = workState[0] * 60;
-
-        setTimerValue(totalSeconds);
-        setTimerMaxValue(totalSeconds);
-        let intervalId = setInterval(() => {
-            const stringCorrection = (n) => {
-                if (n < 10) return '0' + n;
-                return n;
-            }
-
-            setTimerValue(totalSeconds);
-            let minutes = stringCorrection(parseInt(totalSeconds / 60));
-            let seconds = stringCorrection(totalSeconds % 60);
-            setTimerText(`${minutes}:${seconds}`);
-            totalSeconds -= 1;
-
-            if (totalSeconds < 0) clearInterval(intervalId);
-        }, 1000);
+        timer(workState[0] * 60, true);
     }
 
     return (
