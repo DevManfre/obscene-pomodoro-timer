@@ -30,8 +30,10 @@ function PomodoroTimer() {
                 opacity: 0,
             }
         });
-        setTimeout(() => setSettingsVisibility(false), 500);
-        setTitle("Time to focus!")
+        setTimeout(() => {
+            setSettingsVisibility(false);
+            setTitle("Time to focus!");
+        }, 500);
 
         let totalSeconds = workState[0] * 60;
 
