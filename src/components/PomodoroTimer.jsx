@@ -6,16 +6,18 @@ import Colors from '../static/css/style.css'
 import TimerSettings from './TimerSettings';
 import { useState } from 'react';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
-import { animated, useSpring } from '@react-spring/web'
+import { animated, useSpring, useSpringRef } from '@react-spring/web'
 
 function PomodoroTimer() {
-    const breakState = useState(0.1);
-    const workState = useState(0.15);
+    const breakState = useState(5);
+    const workState = useState(25);
     const [timerValue, setTimerValue] = useState(1);
     const [timerMaxValue, setTimerMaxValue] = useState(1);
     const [settingsVisibility, setSettingsVisibility] = useState(true);
     const [timerText, setTimerText] = useState('');
     const [title, setTitle] = useState("Pomodoro Timer");
+    const [textColor, setTextColor] = useState(Colors.pomodoroMainColor);
+    const [backgroundColor, setBackgroundColor] = useState(Colors.pomodoroStartBg);
     const [settings, settingsApi] = useSpring(() => ({
         opacity: 1
     }));
@@ -38,18 +40,26 @@ function PomodoroTimer() {
             if (totalSeconds < 0) {
                 clearInterval(intervalId);
 
-                if (isWorkTime) {
-                    /* Starting break */
-                    timer(breakState[0] * 60, false);
-                    setTitle('Take a break!');
-                }
-                else {
-                    /* Starting work */
-                    timer(workState[0] * 60, true);
-                    setTitle('Time to focus!');
-                }
+                if (isWorkTime)
+                    breakTimer();
+                else 
+                    workTimer();
             }
         }, 1000);
+    }
+
+    function workTimer() {
+        setTitle("Time to focus!");
+        setTextColor(Colors.pomodoroStartBg);
+        setBackgroundColor(Colors.pomodoroMainColor);
+        timer(workState[0] * 60, true);
+    }
+
+    function breakTimer() {
+        setTitle('Take a break!');
+        setTextColor(Colors.pomodoroBreakColor);
+        setBackgroundColor(Colors.pomodoroStartBg);
+        timer(breakState[0] * 60, false);
     }
 
     function handlePlayClick() {
@@ -64,14 +74,14 @@ function PomodoroTimer() {
         });
         setTimeout(() => {
             setSettingsVisibility(false);
-            setTitle("Time to focus!");
+            
         }, 500);
 
-        timer(workState[0] * 60, true);
+        workTimer();
     }
 
     return (
-        <div className="pomodoro-timer">
+        <div id='pomodoro-timer' style={{color: textColor, backgroundColor: backgroundColor}}>
             <h1 className='title'>{title}</h1>
             <animated.div className="row" style={{
                 display: settingsVisibility ? 'inerhit' : 'none',
@@ -86,8 +96,9 @@ function PomodoroTimer() {
             <div className="timer">
                 <CircularProgressbar maxValue={timerMaxValue} value={timerValue} text={timerText} styles={buildStyles({
                     pathTransitionDuration: 1,
-                    pathColor: Colors.pomodoroMainColor,
-                    textColor: Colors.pomodoroMainColor
+                    pathColor: textColor,
+                    textColor: textColor,
+                    trailColor: 'none'
                 })} />
             </div>
         </div>

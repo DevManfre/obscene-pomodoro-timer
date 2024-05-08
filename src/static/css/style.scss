@@ -10,6 +10,7 @@ $font-family-digit: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     bodyBg: $body-bg;
     pomodoroStartBg: $pomodoro-start-bg;
     pomodoroMainColor: $pomodoro-main-color;
+    pomodoroBreakColor: #659964;
 }
 
 // STYLES
@@ -18,7 +19,7 @@ body #root {
     user-select: none;
     height: 100vh;
 
-    .pomodoro-timer {
+    #pomodoro-timer {
         background-color: $pomodoro-start-bg;
         height: min-content;
         width: calc($pomodoro-size / 11 * 9);
@@ -32,7 +33,6 @@ body #root {
 
         .title {
             font-size: calc($pomodoro-size / 12.5);
-            color: $pomodoro-main-color;
             text-align: center;
         }
 
