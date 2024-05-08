@@ -6,7 +6,7 @@ import Colors from '../static/css/style.css'
 import TimerSettings from './TimerSettings';
 import { useState } from 'react';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
-import { animated, useSpring, useSpringRef } from '@react-spring/web'
+import { animated, useSpring } from '@react-spring/web'
 
 function PomodoroTimer() {
     const breakState = useState(5);
