@@ -1,3 +1,9 @@
+:export {
+  bodyBg: #e29d9d;
+  pomodoroStartBg: white;
+  pomodoroMainColor: #DD5353;
+}
+
 body #root {
   background-color: #e29d9d;
   -webkit-user-select: none;
@@ -7,7 +13,8 @@ body #root {
 }
 body #root .pomodoro-timer {
   background-color: white;
-  height: 500px;
+  height: -moz-min-content;
+  height: min-content;
   width: 409.0909090909px;
   border-radius: 25px;
   font-family: MyCustomFont;
@@ -15,28 +22,42 @@ body #root .pomodoro-timer {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  padding: 20px;
 }
 body #root .pomodoro-timer .title {
   font-size: 40px;
-  margin: 20px;
   color: #DD5353;
   text-align: center;
 }
-body #root .pomodoro-timer .setting {
+body #root .pomodoro-timer .row {
   color: #e29d9d;
+}
+body #root .pomodoro-timer .row .setting {
   font-size: 25px;
   text-align: center;
 }
-body #root .pomodoro-timer .setting .setting-title {
+body #root .pomodoro-timer .row .setting .setting-title {
   margin: 0;
 }
-body #root .pomodoro-timer .setting span {
+body #root .pomodoro-timer .row .setting span {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   display: inline-block;
   width: 50px;
 }
-body #root .pomodoro-timer .setting i {
+body #root .pomodoro-timer .row .play-btn {
+  font-size: 50px;
+  text-align: center;
+}
+body #root .pomodoro-timer .row i {
   cursor: pointer;
+}
+body #root .pomodoro-timer .timer {
+  margin-top: 15px;
+  width: 300px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 @font-face {
