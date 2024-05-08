@@ -1,0 +1,66 @@
+:export {
+  bodyBg: #e29d9d;
+  pomodoroStartBg: white;
+  pomodoroMainColor: #DD5353;
+  pomodoroBreakColor: #659964;
+}
+
+body #root {
+  background-color: #e29d9d;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  height: 100vh;
+}
+body #root #pomodoro-timer {
+  background-color: white;
+  height: -moz-min-content;
+  height: min-content;
+  width: 409.0909090909px;
+  border-radius: 25px;
+  font-family: MyCustomFont;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+body #root #pomodoro-timer .title {
+  font-size: 40px;
+  text-align: center;
+}
+body #root #pomodoro-timer .row {
+  color: #e29d9d;
+}
+body #root #pomodoro-timer .row .setting {
+  font-size: 25px;
+  text-align: center;
+}
+body #root #pomodoro-timer .row .setting .setting-title {
+  margin: 0;
+}
+body #root #pomodoro-timer .row .setting span {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  display: inline-block;
+  width: 50px;
+}
+body #root #pomodoro-timer .row .play-btn {
+  font-size: 50px;
+  text-align: center;
+}
+body #root #pomodoro-timer .row i {
+  cursor: pointer;
+}
+body #root #pomodoro-timer .timer {
+  margin-top: 15px;
+  width: 300px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("../font/super-creamy.ttf") format("truetype");
+}/*# sourceMappingURL=style.css.map */

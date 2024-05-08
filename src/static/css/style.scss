@@ -1,0 +1,82 @@
+// VARS
+$body-bg: #e29d9d;
+$pomodoro-size: 500px;
+$pomodoro-start-bg: white;
+$pomodoro-main-color: #DD5353;
+$font-family-digit: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+// EXPORT
+:export {
+    bodyBg: $body-bg;
+    pomodoroStartBg: $pomodoro-start-bg;
+    pomodoroMainColor: $pomodoro-main-color;
+    pomodoroBreakColor: #659964;
+}
+
+// STYLES
+body #root {
+    background-color: $body-bg;
+    user-select: none;
+    height: 100vh;
+
+    #pomodoro-timer {
+        background-color: $pomodoro-start-bg;
+        height: min-content;
+        width: calc($pomodoro-size / 11 * 9);
+        border-radius: calc($pomodoro-size / 20);
+        font-family: MyCustomFont;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: calc($pomodoro-size / 25);
+
+        .title {
+            font-size: calc($pomodoro-size / 12.5);
+            text-align: center;
+        }
+
+        .row {
+            color: $body-bg;
+
+            .setting {
+                font-size: calc($pomodoro-size / 20);
+                text-align: center;
+
+                .setting-title {
+                    margin: 0;
+                }
+
+                span {
+                    font-family: $font-family-digit;
+                    display: inline-block;
+                    width: 50px;
+                }
+            }
+
+            .play-btn {
+                font-size: 50px;
+                text-align: center;
+            }
+
+            i {
+                cursor: pointer;
+            }
+        }
+
+        .timer {
+            margin-top: 15px;
+            width: 300px;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%);
+            font-family: $font-family-digit;
+        }
+    }
+}
+
+// FONTS
+@font-face {
+    font-family: "MyCustomFont";
+    src: url('../font/super-creamy.ttf') format("truetype");
+}
